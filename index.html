@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Loteria V2</title>
+</head>
+<body>
+    <h1>Sorteo de Loteria.</h1>
+    <form>
+        <label for="usuarioMaximo">
+            <fieldset class="condiciones">
+                <legend>Valores Para el Sorteo.</legend>
+
+                <input type="number" name="usuarioMaximo" min="0" max="100" step="1" value="10" class="ingresosUsuario" id="usuarioMaximo" required>
+                <label class="descripciones" for="usuarioMaximo">Indique hasta que valor máximo quisiera sortear esta oportunidad.</label> 
+                <br>
+                <br>
+                <input type="number" name="usuarioCantidadSorteos" min="1" max="10" value="1" class="ingresosUsuario" id="usuarioCantidadSorteos" required>
+                <label class="descripciones" for="usuarioCantidadSorteos">Indique cuantos valores quiere elegir aleatoriamente.</label>
+                <br>
+                <br>
+                <input type="number" min="1" max="5" value="1" name="usuarioPosibilidades" class="ingresosUsuario" id="usuarioPosibilidades" required>
+                <label class="descripciones" for="usuarioPosibilidades">Indique cuantas chances quiere tener para acertar. (hasta un máximo de 5 intentos)</label>
+                <br>
+                <br>
+                <input onclick="tomarValoresUsuario()" type="button" name="botonGuardarDatos" class="ingresosUsuario" id="guardar" value="Guardar parámetros.">
+            </fieldset>
+        </label>
+
+        <label for="usuarioChoice">
+            <fieldset class="ejecucion" id="campoEjecucion" hidden>
+                <legend>Su Elección!</legend>
+                <input type="text" name="valorElegidoUsuario" class="ingresosUsuario" id="usuarioChoice" placeholder="Elija un número..." required autofocus>
+                
+                <input onclick="sortear()"  type="button" name="botonVerificacion" class="ingresosUsuario" id="submit" value="Ejecutar!">
+            </fieldset>
+        </label>
+    </form>
+    <img id="acierto" src="">
+
+
+    <script src="./JS/main.js"></script>
+</body>
+</html>
